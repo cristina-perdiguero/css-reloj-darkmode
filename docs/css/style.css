@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.size{
+    min-width: 300px;
+    min-height: 300px;
+}
+.back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #eef3f6;
+    z-index: -1;
+}
+input{
+    width: 100px;
+    height: 50px;
+    margin-bottom: 30px;
+    -webkit-appearance: none; 
+    box-shadow: -10px -10px 15px #ffffff1A, 10px 10px 15px #00000033, inset -10px -10px 15px  #ffffff1A, inset 10px 10px 15px #00000033; 
+    border: 2px solid #eef3f6;
+    background-color: #eef3f6;
+    border-radius: 50px;
+    position: relative;
+}
+label{
+    width: 90px;
+    height: 50px;
+    position: relative;
+    top: -74px;
+    left: 2px;
+}
+.ball{
+    display: block;
+    width: 40px;
+    height: 40px; 
+    border-radius: 50%;
+    background-color: #eef3f6;
+    box-shadow: -10px -10px 15px #ffffff1A, 10px 10px 15px #00000033, inset -10px -10px 15px #00000033, inset 10px 10px 15px #ffffff1A; 
+    position: absolute;
+}
+i{
+    position: absolute;
+    left: 29%;
+    top: 28%;
+}
+.fa-moon{
+    color: #05de72;
+    left: 15px;
+    text-shadow: 0px 0px 10px #05de72;
+}
+.fa-sun{
+    left: 65%;
+    color: #ffde17;
+    text-shadow: 0px 0px 10px #ffde17;
+}
+input:checked~label{
+    padding-left: 48px ;
+}
+input:checked{
+    border: 2px solid #222;
+    background-color: #222;
+}
+input:checked~.clock{
+    border: 15px solid #222;
+    background-color: #222;
+}
+input:checked~.back, input:checked~label>span{
+    background-color: #222;
+}
+.clock{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: -10px -10px 15px #ffffff1A, 10px 10px 15px #00000033, inset -10px -10px 15px  #ffffff1A, inset 10px 10px 15px #00000033; 
+    border: 15px solid #eef3f6;
+    background-color:#eef3f6;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.clock-hands{
+    position: absolute; 
+    left: 50%;
+    bottom: 50%;
+    border-radius: 50px;
+    background-color: #666;
+    box-shadow:-2px -2px 10px #00000066;
+}
+.clock:hover .clock-hands{
+    animation-play-state: paused;
+}
+#second{
+    width: 3px;
+    height: 45%;
+    animation-name: clock;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60);
+    
+}
+#minute{
+    width: 3px;
+    height: 30%;
+    animation-name: clock;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60);
+}
+#hour{
+    width: 6px;
+    height: 15%;
+    animation-name: clock;
+    animation-duration: 216000s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(12);
+}
+/*aminaciones*/
+@keyframes clock{
+    0%{
+        transform: rotate(0deg);
+        transform-origin: bottom; 
+    }
+    100%{
+        transform: rotate(360deg);
+        transform-origin: bottom; 
+    }
+}
